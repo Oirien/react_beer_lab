@@ -1,0 +1,30 @@
+li {
+    list-style-type: none;
+}
+
+summary::marker {
+    content: "";
+}
+
+.beer__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.beer__list {
+    max-width: 35%;
+    width: 100%;
+    border: 2px solid black;
+    padding: 2rem;
+}
+
+.beer__favorites {
+    max-width: 35%;
+    width: 100%;
+    border: 2px solid black;
+    padding: 2rem;
+}
+
+.beer__item {
+    border: 1px black solid;
+}
