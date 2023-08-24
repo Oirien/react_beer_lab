@@ -29,7 +29,7 @@ const BeerContainer = () => {
     return (
         <>
             <div className="beer__container">
-                <div className="beer__list">
+                <div className="beer__list border--gradient">
                     <BeerList beers={beers} handleNewFavoriteBeer={handleNewFavoriteBeer} beerPage={beerPage} />
                     <button
                         onClick={() => {

@@ -36,7 +36,7 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
                 {beer.name}
             </div>
             {isOpen && (
-                <div className="beer__details">
+                <div className="beer__details border--gradient">
                     <p>{beer.description}</p>
                     {isRecipeOpen === true ? (
                         <button onClick={toggleRecipeDetails}>Close Recipe</button>

@@ -40,10 +40,10 @@ const Beer = ({ beer, handleNewFavoriteBeer }) => {
         <>
             <li className="beer__item--container">
                 <div className="beer__item" onClick={toggleDetails}>
-                    {beer.name}
+                    <h3>{beer.name}</h3>
                 </div>
                 {isOpen && (
-                    <div className="beer__details">
+                    <div className="beer__details border--gradient">
                         <p>{beer.description}</p>
                         {isRecipeOpen === true ? (
                             <button onClick={toggleRecipeDetails}>Close Recipe</button>

@@ -9,8 +9,8 @@ const BeerList = ({ beers, handleNewFavoriteBeer, beerPage }) => {
                 {beers.map((beer, i) => (
                     <Beer beer={beer} handleNewFavoriteBeer={handleNewFavoriteBeer} key={i} />
                 ))}
-                <h3>You are currently enjoying page {beerPage} of 22</h3>
             </ul>
+            <h3>You are currently enjoying page {beerPage} of 22</h3>
         </>
     );
 };
