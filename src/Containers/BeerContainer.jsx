@@ -5,7 +5,7 @@ import FavoriteBeers from "../Components/FavoriteBeers";
 const BeerContainer = () => {
     const [beers, setBeers] = useState([]);
     const [favoriteBeers, setFavoriteBeers] = useState([]);
-    const [beerPage, setBeerPage] = useState(18);
+    const [beerPage, setBeerPage] = useState(1);
 
     useEffect(() => {
         fetch(`https://api.punkapi.com/v2/beers?page=${beerPage}&per_page=15`)
@@ -22,9 +22,7 @@ const BeerContainer = () => {
     };
 
     const handleRemoveFavoriteBeer = beer => {
-        const removedFavoriteBeers = favoriteBeers.filter(
-            favoriteBeer => favoriteBeer !== beer
-        );
+        const removedFavoriteBeers = favoriteBeers.filter(favoriteBeer => favoriteBeer !== beer);
         setFavoriteBeers(removedFavoriteBeers);
     };
 
@@ -32,11 +30,7 @@ const BeerContainer = () => {
         <>
             <div className="beer__container">
                 <div className="beer__list">
-                    <BeerList
-                        beers={beers}
-                        handleNewFavoriteBeer={handleNewFavoriteBeer}
-                        beerPage={beerPage}
-                    />
+                    <BeerList beers={beers} handleNewFavoriteBeer={handleNewFavoriteBeer} beerPage={beerPage} />
                     <button
                         onClick={() => {
                             setBeerPage(beerPage === 22 ? 1 : beerPage + 1);
@@ -44,10 +38,7 @@ const BeerContainer = () => {
                         Show me more Beer!
                     </button>
                 </div>
-                <FavoriteBeers
-                    favoriteBeers={favoriteBeers}
-                    handleRemoveFavoriteBeer={handleRemoveFavoriteBeer}
-                />
+                <FavoriteBeers favoriteBeers={favoriteBeers} handleRemoveFavoriteBeer={handleRemoveFavoriteBeer} />
             </div>
         </>
     );
