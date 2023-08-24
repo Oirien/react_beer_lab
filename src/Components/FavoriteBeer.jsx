@@ -39,9 +39,13 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
                 <div className="beer__details border--gradient">
                     <p>{beer.description}</p>
                     {isRecipeOpen === true ? (
-                        <button onClick={toggleRecipeDetails}>Close Recipe</button>
+                        <button className="beer__button border--gradient" onClick={toggleRecipeDetails}>
+                            Close Recipe
+                        </button>
                     ) : (
-                        <button onClick={toggleRecipeDetails}>Show Recipe</button>
+                        <button className="beer__button border--gradient" onClick={toggleRecipeDetails}>
+                            Show Recipe
+                        </button>
                     )}
                     {isRecipeOpen && (
                         <div className="beer__details">
@@ -61,7 +65,9 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
                             <p className="yeast">We used {beer.ingredients.yeast} yeast</p>
                         </div>
                     )}
-                    <button onClick={() => handleRemoveFavoriteBeer(beer)}>I've decided I no longer like this beer!</button>
+                    <button className="beer__button border--gradient" onClick={() => handleRemoveFavoriteBeer(beer)}>
+                        I've decided I no longer like this beer!
+                    </button>
                 </div>
             )}
         </li>

@@ -30,8 +30,10 @@ const BeerContainer = () => {
         <>
             <div className="beer__container">
                 <div className="beer__list border--gradient">
-                    <BeerList beers={beers} handleNewFavoriteBeer={handleNewFavoriteBeer} beerPage={beerPage} />
+                    <BeerList beers={beers} handleNewFavoriteBeer={handleNewFavoriteBeer} />
+                    <h3>You are currently enjoying page {beerPage} of 22</h3>
                     <button
+                        className="beer__button border--gradient"
                         onClick={() => {
                             setBeerPage(beerPage === 22 ? 1 : beerPage + 1);
                         }}>
