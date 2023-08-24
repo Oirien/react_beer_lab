@@ -8,6 +8,9 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
 
     const toggleDetails = () => {
         setIsOpen(!isOpen);
+        {
+            isRecipeOpen ? setIsRecipeOpen(!isRecipeOpen) : null;
+        }
     };
 
     const toggleRecipeDetails = () => {
@@ -37,6 +40,7 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
             </div>
             {isOpen && (
                 <div className="beer__details border--gradient">
+                    <p>"{beer.tagline}"</p>
                     <p>{beer.description}</p>
                     {isRecipeOpen === true ? (
                         <button className="beer__button border--gradient" onClick={toggleRecipeDetails}>
@@ -65,7 +69,12 @@ const FavoriteBeer = ({ beer, handleRemoveFavoriteBeer }) => {
                             <p className="yeast">We used {beer.ingredients.yeast} yeast</p>
                         </div>
                     )}
-                    <button className="beer__button border--gradient" onClick={() => handleRemoveFavoriteBeer(beer)}>
+                    <button
+                        className="beer__button border--gradient"
+                        onClick={() => {
+                            handleRemoveFavoriteBeer(beer);
+                            toggleDetails();
+                        }}>
                         I've decided I no longer like this beer!
                     </button>
                 </div>

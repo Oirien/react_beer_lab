@@ -23,6 +23,9 @@ const Beer = ({ beer, handleNewFavoriteBeer }) => {
 
     const toggleDetails = () => {
         setIsOpen(!isOpen);
+        {
+            isRecipeOpen ? setIsRecipeOpen(!isRecipeOpen) : null;
+        }
     };
 
     const [isRecipeOpen, setIsRecipeOpen] = useState(false);
@@ -44,6 +47,7 @@ const Beer = ({ beer, handleNewFavoriteBeer }) => {
                 </div>
                 {isOpen && (
                     <div className="beer__details border--gradient">
+                        <p>"{beer.tagline}"</p>
                         <p>{beer.description}</p>
                         {isRecipeOpen === true ? (
                             <button className="beer__button border--gradient" onClick={toggleRecipeDetails}>
